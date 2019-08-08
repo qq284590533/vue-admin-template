@@ -9,9 +9,11 @@ const state = {
 }
 
 const mutations = {
-  CHANGE_SETTING: (state, { key, value }) => {
-    if (state.hasOwnProperty(key)) {
-      state[key] = value
+  CHANGE_SETTING: (state, settings) => {
+    for( let key in settings) {
+      if (state.hasOwnProperty(key)) {
+        state[key] = settings[key]
+      }
     }
   }
 }
